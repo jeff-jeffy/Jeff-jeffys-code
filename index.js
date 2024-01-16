@@ -36,7 +36,14 @@ app.listen(port, () => {
 });
 
 
-const statusMessages = ["..."];
+const statusMessages = ["just existing :P","eating yum food :D","stealing stuff >:)",
+                        "staring at the sky (so bootiful)","painting stuff :)","eating coal :>",
+                        "crackling and stuff :P","burning down houses >:)","reading books :P",
+                       "watching TV","eating yum treats","taking a trip to the forest :>",
+                       "annoying crouw >:)","just existing :P","staring at the sky (so bootiful)",
+                       "reading books :P","painting stuff :)","commiting warcrimes >:)",
+                       "exploring stuff :O","cookin sum food :>","stealing stuff >:)",
+                       "eating yum treats","watching TV"];
 
 
 let currentIndex = 0;
@@ -74,7 +81,7 @@ function updateStatusAndSendMessages() {
 
   client.user.setPresence({
     activities: [{ name: currentStatus, type: ActivityType.Custom}],
-    status: 'dnd',
+    status: 'online',
   });
 
   
@@ -98,7 +105,7 @@ client.once('ready', () => {
 
   setInterval(() => {
     updateStatusAndSendMessages();
-  }, 5000);
+  }, 10800000);
 });
 
 login();
